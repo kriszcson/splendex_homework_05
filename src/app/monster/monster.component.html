@@ -1,0 +1,9 @@
+<div class="container">
+    <img [src]=getLogo(monster) class=" elemental-logo ">
+    <div class=" name ">{{monster.name}}</div>
+    <div class="points ">
+        <div class=" atk ">{{monster.atk}}<img src="../../assets/attack.svg" class="atk-logo"></div>
+        <div class="def ">{{monster.def}}<img src="../../assets/defense.svg" class="def-logo"></div>
+    </div>
+    <button (click)=remove(monster) class="del">X</button>
+</div>

@@ -1,0 +1,61 @@
+$primary-background-color:#272727;
+$primary-font-color: #ddd3d3;
+$delete-background-color: #ce3939;
+.container {
+    margin: 10px;
+    border: 3px solid#272727;
+    border-radius: 5%;
+    width: 700px;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    padding: 10px;
+    background-color: $primary-background-color;
+    color: $primary-font-color;
+    font-size: 2rem;
+    font-weight: bold;
+    .elemental-logo {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+    .del {
+        float: right;
+        width: 100px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        background-color: $delete-background-color;
+        border: 2px solid rgb(138, 55, 55);
+        border-radius: 25%;
+    }
+    .del:hover {
+        background-color: #ff0000;
+    }
+    .name {
+        margin-right: auto;
+        margin-left: 20px;
+        text-align: left;
+        justify-content: left;
+        float: left;
+    }
+    .points {
+        align-items: right;
+        text-align: right;
+        justify-content: center;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        .atk-logo,
+        .def-logo {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            align-items: center;
+        }
+    }
+}
