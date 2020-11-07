@@ -5,5 +5,5 @@
         <div class=" atk ">{{monster.atk}}<img src="../../assets/attack.svg" class="atk-logo"></div>
         <div class="def ">{{monster.def}}<img src="../../assets/defense.svg" class="def-logo"></div>
     </div>
-    <button (click)=remove(monster) class="del">X</button>
+    <button ng-click="onDeleteButtonClick($event, monster)" class=" del ">X</button>
 </div>

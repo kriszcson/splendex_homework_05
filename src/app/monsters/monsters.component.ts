@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ElementalEnum, Monster } from '../model/monster';
 
 @Component({
@@ -9,6 +9,8 @@ import { ElementalEnum, Monster } from '../model/monster';
 
 export class MonstersComponent implements OnInit {
   monsters: Monster[];
+  @Output() monster: Monster;
+  @Input() delete: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
   ngOnInit(): void {
     this.monsters = [
@@ -43,7 +45,14 @@ export class MonstersComponent implements OnInit {
     ]
     this.newMonsters();
   }
-
+  onDeleteButtonClick($event, m: Monster) {
+    console.log('ASDSAD HHEEE');
+    for (let i = 0; i < this.monsters.length; i++) {
+      if (m.name === this.monsters[i].name) {
+        this.monsters.slice(i, 1);
+      }
+    }
+  }
   newMonsters() {
   }
 }

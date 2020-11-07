@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ElementalEnum, Monster } from '../model/monster';
 import { MonstersComponent } from '../monsters/monsters.component';
 
@@ -10,20 +10,14 @@ import { MonstersComponent } from '../monsters/monsters.component';
 
 export class MonsterComponent implements OnInit {
   @Input() monster: Monster;
-  @Input() monsters: Monster[];
+  @Input() monsters: MonstersComponent;
+  @Output() delete: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  remove(m: Monster): void {
-    for (let i = 0; i < this.monsters.length; i++) {
-      if (m.name === this.monsters[i].name) {
-        this.monsters.splice(i, 1);
-      }
-    }
-  }
 
   getLogo(m: Monster): string {
     switch (m.elemental) {
@@ -32,5 +26,9 @@ export class MonsterComponent implements OnInit {
       case ElementalEnum.Elemental.Fire: return "../../assets/fire.svg";
       case ElementalEnum.Elemental.Water: return "../../assets/water.svg";
     }
+  }
+
+  onDeleteButtonClick($event, m: Monster) {
+    this.delete.emit;
   }
 }

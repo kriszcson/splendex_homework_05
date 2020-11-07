@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { MonstersComponent } from './monsters/monsters.component';
 import { MonsterComponent } from './monster/monster.component';
 import { HeaderComponent } from './header/header.component';
+import { CreateMonsterComponent } from './create-monster/create-monster.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonstersComponent,
     MonsterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateMonsterComponent
   ],
   imports: [
     BrowserModule

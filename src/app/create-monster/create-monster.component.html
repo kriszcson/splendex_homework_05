@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="header-container">
+        <div class="header">Create Monster</div>
+    </div>
+    <div class="select-row">
+        <img src="../../assets/arrow-left.svg" class="arrows left-arrow" (click)=clickLeftArrow($event) class="elementals-logo">
+        <img [src]=selectElemental()>
+        <img src="../../assets/arrow-right.svg" class="arrows right-arrow" (click)=clickRightArrow($event) class="elementals-logo">
+    </div>
+    <input type="text" class="name" placeholder="The name of your Monster...">
+    <div class="setters">
+        <div class="atk">
+            <img src="../../assets/attack.svg" class="logo atk-logo">
+            <img class="plus-minus plus" src="https://img.icons8.com/ios-glyphs/30/000000/plus.png " />
+            <span class="value atk-value">3</span>
+            <img class="plus-minus minus" src="https://img.icons8.com/ios-glyphs/30/000000/minus.png" />
+        </div>
+        <div class="def">
+            <img src="../../assets/defense.svg" class="logo def-logo">
+            <img class="plus-minus plus" src="https://img.icons8.com/ios-glyphs/30/000000/plus.png " />
+            <span class="value def-value">4</span>
+            <img class="plus-minus minus" src="https://img.icons8.com/ios-glyphs/30/000000/minus.png" />
+        </div>
+    </div>
+    <button class="add-btn">Add Monster</button>
+</div>
