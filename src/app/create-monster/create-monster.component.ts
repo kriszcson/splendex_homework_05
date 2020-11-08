@@ -8,15 +8,24 @@ import { MonstersComponent } from '../monsters/monsters.component';
   styleUrls: ['./create-monster.component.scss']
 })
 export class CreateMonsterComponent implements OnInit {
-  @Input() monsters: Monster[];
+  @Input() monsters: MonstersComponent;
   selectInt: number = 1;
+  atk: number = 1;
+  def: number = 1;
+  enterName: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  addMonster($event) {
+    /* let newMonster = { name: this.enterName, elemental: ElementalEnum.Elemental.Air, atk: this.atk, def: this.def, visible: true };
+      this.monsters.monsters.push(newMonster);*/
 
-  selectElemental() {
+    console.log(this.enterName);
+  }
+
+  selectElementalLogo() {
     let selectOfFour = this.selectInt % 4;
     switch (selectOfFour) {
       case 0: return "../../assets/water.svg";
@@ -25,10 +34,43 @@ export class CreateMonsterComponent implements OnInit {
       case 3: return "../../assets/fire.svg";
     }
   }
+  selectElemental() {
+    let selectOfFour = this.selectInt % 4;
+    switch (selectOfFour) {
+      case 0: return ElementalEnum.Elemental.Water;
+      case 1: return ElementalEnum.Elemental.Air;
+      case 2: return ElementalEnum.Elemental.Earth;
+      case 3: return ElementalEnum.Elemental.Fire;
+    }
+  }
+
   clickLeftArrow($event) {
-    this.selectInt--;
+    if (this.selectInt > 0) {
+      this.selectInt--;
+    }
   }
   clickRightArrow($event) {
     this.selectInt++;
+  }
+
+  clickAtkPlus($event) {
+    this.atk++;
+  }
+  clickAtkMinus($event) {
+    if (this.atk > 0) {
+      this.atk--;
+    }
+  }
+
+  clickDefPlus($event) {
+    this.def++;
+    console.log('CKCKCKCK');
+  }
+
+  clickDefMinus($event) {
+    if (this.def > 0) {
+      console.log('CKCKCKCK');
+      this.def--;
+    }
   }
 }
