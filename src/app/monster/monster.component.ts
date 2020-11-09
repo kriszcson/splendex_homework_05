@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ElementalEnum, Monster } from '../model/monster';
-import { MonstersComponent } from '../monsters/monsters.component';
-
 @Component({
   selector: 'monster',
   templateUrl: './monster.component.html',
@@ -9,15 +7,42 @@ import { MonstersComponent } from '../monsters/monsters.component';
 })
 
 export class MonsterComponent implements OnInit {
-  @Input() monster: Monster;
-  @Input() monsters: MonstersComponent;
-  @Output() delete: EventEmitter<any> = new EventEmitter<any>();
 
+  monsters: Monster[];
   constructor() { }
 
   ngOnInit(): void {
+    this.monsters = [
+      {
+        name: "kriszcs",
+        elemental: ElementalEnum.Elemental.Earth,
+        atk: 21,
+        def: 10,
+        visible: true
+      },
+      {
+        name: "YoZsI",
+        elemental: ElementalEnum.Elemental.Fire,
+        atk: 1,
+        def: 100,
+        visible: true
+      },
+      {
+        name: "Gofri",
+        elemental: ElementalEnum.Elemental.Air,
+        atk: 123,
+        def: 321,
+        visible: true
+      },
+      {
+        name: "Margit",
+        elemental: ElementalEnum.Elemental.Fire,
+        atk: 645,
+        def: 75,
+        visible: true
+      }
+    ]
   }
-
 
   getLogo(m: Monster): string {
     switch (m.elemental) {
@@ -28,7 +53,4 @@ export class MonsterComponent implements OnInit {
     }
   }
 
-  onDeleteButtonClick($event, m: Monster) {
-    this.delete.emit;
-  }
 }
