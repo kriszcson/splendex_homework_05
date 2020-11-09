@@ -8,8 +8,8 @@ import { ElementalEnum, Monster } from '../model/monster';
 })
 
 export class MonstersComponent implements OnInit {
+  @Input() monster: Monster;
   monsters: Monster[];
-  monster: Monster;
   @Input() delete: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
   ngOnInit(): void {

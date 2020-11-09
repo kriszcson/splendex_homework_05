@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ɵINJECTOR_IMPL__POST_R3__ } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ElementalEnum, Monster } from '../model/monster';
+import { MonsterComponent } from '../monster/monster.component';
 import { MonstersComponent } from '../monsters/monsters.component';
 
 @Component({
@@ -9,19 +10,19 @@ import { MonstersComponent } from '../monsters/monsters.component';
 })
 export class CreateMonsterComponent implements OnInit {
   @Input() monsters: MonstersComponent;
+  @Input() monster: MonsterComponent;
   selectInt: number = 1;
   atk: number = 1;
   def: number = 1;
-  enterName: string;
+  enterName: string="jozs";
 
   constructor() { }
 
   ngOnInit(): void {
   }
   addMonster($event) {
-    /* let newMonster = { name: this.enterName, elemental: ElementalEnum.Elemental.Air, atk: this.atk, def: this.def, visible: true };
-      this.monsters.monsters.push(newMonster);*/
-
+    let newMonster: Monster = { name: this.enterName, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true };
+    this.monsters.monsters.push(newMonster);
     console.log(this.enterName);
   }
 
@@ -64,12 +65,10 @@ export class CreateMonsterComponent implements OnInit {
 
   clickDefPlus($event) {
     this.def++;
-    console.log('CKCKCKCK');
   }
 
   clickDefMinus($event) {
     if (this.def > 0) {
-      console.log('CKCKCKCK');
       this.def--;
     }
   }
