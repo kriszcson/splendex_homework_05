@@ -55,4 +55,12 @@ export class AppComponent {
       case ElementalEnum.Elemental.Water: return "../../assets/water.svg";
     }
   }
+  onDeleteButtonClick(name: string) {
+    for (let i = 0; i < this.monsters.length; i++) {
+      if (name === this.monsters[i].name) {
+        console.log(name);
+        this.monsters.splice(i, 1);
+      }
+    }
+  }
 }

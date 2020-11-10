@@ -55,4 +55,9 @@ export class MonsterComponent implements OnInit {
       case ElementalEnum.Elemental.Water: return "../../assets/water.svg";
     }
   }
+  onDeleteButtonClick(m: Monster) {
+    console.log("HEHEHE");
+    console.log(m);
+
+  }
 }
