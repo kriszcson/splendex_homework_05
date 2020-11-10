@@ -1,7 +1,92 @@
+$primary-background-color:#272727;
+$primary-font-color: #ddd3d3;
+$delete-background-color: #ce3939;
 * {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-direction: center;
     align-items: center;
-    margin: 0 auto;
-    font-family: 'Goldman', cursive;
+}
+
+.elements {
+    display: flex;
+    flex-direction: column;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    .container {
+        margin: 20px;
+        width: 1200px;
+        height: 220px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        padding: 20px;
+        background-color: $primary-background-color;
+        color: $primary-font-color;
+        font-weight: bolder;
+        border: 8px solid black;
+        border-radius: 5%;
+        padding-left: 50px;
+        padding-top: 40px;
+        .elemental-logo {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 30%;
+        }
+        .del {
+            float: right;
+            width: 175px;
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: rgb(184, 27, 27);
+            color: white;
+            border: 10px solid black;
+            border-radius: 20%;
+        }
+        .del:hover {
+            background-color: #ff0000;
+        }
+        .del:focus {
+            outline: none;
+        }
+        .name {
+            margin-right: auto;
+            margin-left: 100px;
+            text-align: left;
+            justify-content: left;
+            float: left;
+            font-size: 4rem;
+            font-weight: bolder;
+        }
+        .atk,
+        .def {
+            float: right;
+            align-items: right;
+            text-align: right;
+            justify-content: center;
+            margin-right: 80px;
+            display: flex;
+            flex-direction: row;
+            font-size: 5rem;
+            .atk-logo,
+            .def-logo {
+                display: flex;
+                float: right;
+                width: 60px;
+                height: 60px;
+                margin-left: 10px;
+                align-items: right;
+                padding: 5px;
+                border: 3px solid white;
+                border-radius: 10%;
+            }
+        }
+    }
 }

@@ -7,8 +7,8 @@ import { ElementalEnum, Monster } from '../model/monster';
 })
 
 export class MonsterComponent implements OnInit {
-
-  @Input() monsters: Monster[];
+  @Input() newMonster: { name: string, elemental: ElementalEnum.Elemental, atk: number, def: number, visible: boolean };
+  monsters: Monster[];
   constructor() { }
 
   ngOnInit(): void {
@@ -42,6 +42,9 @@ export class MonsterComponent implements OnInit {
         visible: true
       }
     ]
+  }
+  addMonster(name) {
+    this.monsters.push(this.newMonster);
   }
 
   getLogo(m: Monster): string {

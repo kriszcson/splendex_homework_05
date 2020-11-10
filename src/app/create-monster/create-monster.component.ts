@@ -10,6 +10,7 @@ import { MonsterComponent } from '../monster/monster.component';
 })
 export class CreateMonsterComponent implements OnInit {
   @Output() monsters: Monster[];
+  @Output() newMonster = new EventEmitter<{ name: string, elemental: ElementalEnum.Elemental, atk: number, def: number, visible: true }>();
   selectInt: number = 1;
   atk: number = 1;
   def: number = 1;
@@ -21,13 +22,13 @@ export class CreateMonsterComponent implements OnInit {
   }
 
   addMonster(name) {
+    console.log(name.value);
     console.log(this.selectElemental());
     console.log(this.atk);
     console.log(this.def);
     console.log(true);
-    let m = new Monster(name.value, this.selectElemental(), this.atk, this.def, true);
-    console.log(m);
-    this.monsters.push(m);
+    this.newMonster.emit({ name: name.value, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true });
+
   }
   selectElementalLogo() {
     let selectOfFour = this.selectInt % 4;
