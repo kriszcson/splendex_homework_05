@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { stringify } from 'querystring';
 import { ElementalEnum, Monster } from '../model/monster';
 import { MonsterComponent } from '../monster/monster.component';
 
@@ -8,8 +9,7 @@ import { MonsterComponent } from '../monster/monster.component';
   styleUrls: ['./create-monster.component.scss']
 })
 export class CreateMonsterComponent implements OnInit {
-  @Input() monsters: [];
-  @Input() enterName;
+  @Output() monsters: Monster[];
   selectInt: number = 1;
   atk: number = 1;
   def: number = 1;
@@ -21,13 +21,13 @@ export class CreateMonsterComponent implements OnInit {
   }
 
   addMonster(name) {
-  /*  let newMonster: Monster = { name: this.enterName, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true };
-    this.monsters.monsters.push(newMonster);
-   */ console.log("this.enterName " + name.value);
     console.log(this.selectElemental());
     console.log(this.atk);
     console.log(this.def);
     console.log(true);
+    let m = new Monster(name.value, this.selectElemental(), this.atk, this.def, true);
+    console.log(m);
+    this.monsters.push(m);
   }
   selectElementalLogo() {
     let selectOfFour = this.selectInt % 4;
