@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ElementalEnum, Monster } from '../model/monster';
 import { MonsterComponent } from '../monster/monster.component';
-import { MonstersComponent } from '../monsters/monsters.component';
 
 @Component({
   selector: 'create-monster',
@@ -9,23 +8,27 @@ import { MonstersComponent } from '../monsters/monsters.component';
   styleUrls: ['./create-monster.component.scss']
 })
 export class CreateMonsterComponent implements OnInit {
-  @Input() monsters: MonstersComponent;
-  @Input() monster: MonsterComponent;
+  @Input() monsters: [];
+  //@Input() enterName;
   selectInt: number = 1;
   atk: number = 1;
   def: number = 1;
-  enterName: string="jozs";
+  /* @Output() newonster: Monster = new EventEmitter<{name: string, elemental: ElementalEnum.Elemental, atk:number, def:number, visible:boolean}>;*/
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  addMonster($event) {
-    let newMonster: Monster = { name: this.enterName, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true };
-    this.monsters.monsters.push(newMonster);
-    console.log(this.enterName);
-  }
 
+  addMonster(name: string) {
+  /*  let newMonster: Monster = { name: this.enterName, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true };
+    this.monsters.monsters.push(newMonster);
+   */ console.log("this.enterName " + name);
+    console.log(this.selectElemental());
+    console.log(this.atk);
+    console.log(this.def);
+    console.log(true);
+  }
   selectElementalLogo() {
     let selectOfFour = this.selectInt % 4;
     switch (selectOfFour) {

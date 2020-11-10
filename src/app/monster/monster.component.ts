@@ -8,27 +8,27 @@ import { ElementalEnum, Monster } from '../model/monster';
 
 export class MonsterComponent implements OnInit {
 
-  monsters: Monster[];
+  @Input() monsters: Monster[];
   constructor() { }
 
   ngOnInit(): void {
     this.monsters = [
       {
-        name: "kriszcs",
+        name: "kriszke",
         elemental: ElementalEnum.Elemental.Earth,
         atk: 21,
         def: 10,
         visible: true
       },
       {
-        name: "YoZsI",
+        name: "jozsi",
         elemental: ElementalEnum.Elemental.Fire,
         atk: 1,
         def: 100,
         visible: true
       },
       {
-        name: "Gofri",
+        name: "asd",
         elemental: ElementalEnum.Elemental.Air,
         atk: 123,
         def: 321,
@@ -52,5 +52,4 @@ export class MonsterComponent implements OnInit {
       case ElementalEnum.Elemental.Water: return "../../assets/water.svg";
     }
   }
-
 }

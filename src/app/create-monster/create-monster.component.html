@@ -8,11 +8,12 @@
         <img src="../../assets/arrow-right.svg " class="arrows right-arrow " (click)=clickRightArrow($event)>
     </div>
     <input type="text " class="name " placeholder="The name of your Monster... ">
-    <div class="setters ">
+    <div class=" setters ">
         <div class="atk ">
             <img src="../../assets/attack.svg " class="logo atk-logo ">
             <div class="value atk-value ">{{atk}}</div>
-            <div class="setter-icons "> <img class="plus-minus plus " src="https://img.icons8.com/ios-glyphs/30/000000/plus.png " (click)="clickAtkPlus($event) " />
+            <div class="setter-icons ">
+                <img class="plus-minus plus " src="https://img.icons8.com/ios-glyphs/30/000000/plus.png " (click)="clickAtkPlus($event) " />
                 <img class="plus-minus minus " src="https://img.icons8.com/ios-glyphs/30/000000/minus.png " (click)="clickAtkMinus($event) " />
             </div>
         </div>
@@ -24,5 +25,5 @@
             </div>
         </div>
     </div>
-    <button class=" add-btn" (click)="addMonster($event)">Add Monster</button>
+    <button class=" add-btn " (click)="addMonster($event) ">Add Monster</button>
 </div>
