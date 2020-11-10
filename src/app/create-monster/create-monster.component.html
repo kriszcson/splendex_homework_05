@@ -7,7 +7,7 @@
         <img [src]="selectElementalLogo()" class="elementals-logo ">
         <img src="../../assets/arrow-right.svg " class="arrows right-arrow " (click)=clickRightArrow($event)>
     </div>
-    <input type="text " class="name " placeholder="The name of your Monster... ">
+    <input type="text " class="name " placeholder="The name of your Monster... " #enterName>
     <div class=" setters ">
         <div class="atk ">
             <img src="../../assets/attack.svg " class="logo atk-logo ">
@@ -25,5 +25,5 @@
             </div>
         </div>
     </div>
-    <button class=" add-btn " (click)="addMonster($event) ">Add Monster</button>
+    <button class=" add-btn " (click)="addMonster(enterName) ">Add Monster</button>
 </div>

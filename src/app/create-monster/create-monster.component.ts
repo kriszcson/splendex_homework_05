@@ -9,7 +9,7 @@ import { MonsterComponent } from '../monster/monster.component';
 })
 export class CreateMonsterComponent implements OnInit {
   @Input() monsters: [];
-  //@Input() enterName;
+  @Input() enterName;
   selectInt: number = 1;
   atk: number = 1;
   def: number = 1;
@@ -20,10 +20,10 @@ export class CreateMonsterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addMonster(name: string) {
+  addMonster(name) {
   /*  let newMonster: Monster = { name: this.enterName, elemental: this.selectElemental(), atk: this.atk, def: this.def, visible: true };
     this.monsters.monsters.push(newMonster);
-   */ console.log("this.enterName " + name);
+   */ console.log("this.enterName " + name.value);
     console.log(this.selectElemental());
     console.log(this.atk);
     console.log(this.def);
